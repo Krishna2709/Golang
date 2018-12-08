@@ -9,7 +9,7 @@ func main() {
   // Processing dynamic requests...
   http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request){
     fmt.Fprint(w, "This is a simple Http Server application.")
-    // can read GET parameters with "r.URL.Querry().Get("token")" or
+    // can read GET parameters with "r.URL.Querry().Get("token")" 
     // POST parameters(fields from a HTML form)..."f.FromValue("email")"
   })
   // Serving static assets...
