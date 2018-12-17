@@ -1,0 +1,19 @@
+<input type="text" id="input"/>
+<button onclick="send()">Send</button>
+<pre id="output"></pre>
+<script>
+  var input = document.getElementById("input");
+  var output = document.getElementById("output");
+  var socket = new WebSocket("ws://localhost:8080/echo");
+
+  socket.onopen = function() {
+    ouytput.innerHTML += "Status: Conencted\n";
+  };
+  socket.onmessage = function (e) {
+    output.innerHTML += "Server : " + e.data + "\n";
+  };
+  function send() {
+    socket.send(input.value);
+    input.value = "";
+  }
+</script>
